@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
-  resources :animals, only: %i[index show new create edit update destroy]
+
+  resources :users do
+    resources :animals, only: %i[new create edit update destroy]
+  end
+  resources :animals, only: %i[index show]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
