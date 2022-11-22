@@ -11,11 +11,13 @@ class AnimalsController < ApplicationController
 
   def new
     @animal = Animal.new
+    authorize @animal
   end
 
   def create
     @animal = Animal.new(animal_params)
     @animal.user = current_user
+    authorize @animal
     if @animal.save
       redirect_to animals_path, notice: "animal was successfully created"
     else
@@ -24,9 +26,11 @@ class AnimalsController < ApplicationController
   end
 
   def edit
+    authorize @animal
   end
 
   def update
+    authorize @animal
     if @animal.update(animal_params)
       redirect_to root_path, notice: "animal was successfully updated"
     else
@@ -35,6 +39,7 @@ class AnimalsController < ApplicationController
   end
 
   def destroy
+    authorize @animal
     @animal.destroy
     redirect_to animals_path, notice: 'animal was successfully destroyed'
   end
