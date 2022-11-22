@@ -2,21 +2,10 @@
   <h1>Animals</h1>
 </div>
 
-<div class="index-animal-container">
+<div class="cards m-3">
   <%#= link_to "Back to main page", root_path %>
   <% @animals.each do |animal| %>
-    <%=link_to animal_path(animal), class: "text-decoration-none" do %>
-      <div class="index-animal-card">
-        <%= cl_image_tag animal.image.key %>
-        <div class="index-animal-card-infos">
-          <h2>
-            <%= animal.name %>
-          </h2>
-          <p>
-            <%= animal.description %>
-          </p>
-        </div>
-      </div>
-    <% end %>
+    <%#= render "shared/card-home", animal: animal %>
+    <%= render "shared/card-index", animal: animal %>
   <% end %>
 </div>
