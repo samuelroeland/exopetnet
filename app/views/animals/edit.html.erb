@@ -1,9 +1,6 @@
-<div class="new-animal-card my-5">
-  <div class="container">
+<div class="container">
 
-  <h1>Add an animal</h1>
-
-
+<h1>Edit your <%= @animal.name %></h1>
 
 <%= simple_form_for [@animal] do |f|  %>
   <%= f.input :name %>
@@ -12,8 +9,6 @@
   <%= f.input :price %>
   <%= f.input :origin %>
   <%= f.input :stock %>
-  <%= f.input :image, as: :file %>
-  <%= f.submit  class: "btn btn-primary"%>
+  <%= f.submit %>
 <% end %>
-
 </div>

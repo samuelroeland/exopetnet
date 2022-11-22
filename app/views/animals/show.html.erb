@@ -1,3 +1,21 @@
 <h2><%= @animal.name %></h2>
+<h5><%= @animal.specie %> - <%= @animal.origin %></h5>
+
+<p><%= @animal.description %></p>
+<p><%= @animal.price %>€ - owner: <%= @animal.user.username %></p>
+
+<% if @animal.image.attached? %>
+<%= cl_image_tag @animal.image.key, height: 300, width: 400, crop: :fill %>
+<% end %>
 
 
+
+<p><%= link_to "Back to list", animals_path %></p>
+
+<p><%= link_to "Back to main page", root_path %></p>
+
+<% if policy(@animal).edit? %>
+<p><%= link_to "Edit this animal", edit_animal_path(@animal) %></p>
+<% end %>
+
+<%= button_to "Destroy this animal", @animal, method: :delete if policy(@animal).destroy? %>
