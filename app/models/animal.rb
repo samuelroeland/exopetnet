@@ -5,5 +5,5 @@ class Animal < ApplicationRecord
   validates :specie, presence: true
   validates :description, presence:true
   validates :price, presence:true
-  vaidates :origin, presence: true
+  validates :origin, presence: true
 end
