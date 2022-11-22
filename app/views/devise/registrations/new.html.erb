@@ -1,4 +1,5 @@
-<h2>Sign up</h2>
+<div class="signup-card my-5">
+<h2 class="text-center">Sign up</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),
   data: {turbo: false}) do |f| %>
@@ -21,9 +22,10 @@
 
   </div>
 
-  <div class="form-actions">
+  <div class="form-actions text-center">
     <%= f.button :submit, "Sign up", class: "btn-primary" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
