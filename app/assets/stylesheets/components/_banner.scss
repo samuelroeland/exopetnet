@@ -1,33 +1,36 @@
 .banner-carousel {
-  height:80vh;
-  border: 20px solid white;
-  margin: 25px solid white;
-  img{
-    height: 80vh;
+  margin: 40px solid white;
+  padding: 30px solid white;
+  img {
+    height: 70vh;
+    width: 100%;
+    object-position: center;
+    object-fit: cover;
   }
 }
 
 #indicator {
   bottom: -35px;
-
 }
 
 .carousel-color-black {
-  color: black!important
+  color: black!important;
+  text-shadow: 1px 1px rgb(217, 216, 216)!important;
+}
+
+.top-tagline {
+  top: 3px;
 }
 
 .carousel-options {
-  height: 75vh;
+  max-height: 75vh;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
   h1 {
-    size: 30px;
-    font-family: 'Playfair Display', serif;
+    size: 40px;
+    font-family: 'Merriweather Sans', sans-serif;
   }
-}
-
-#btn1 {
-  color: white;
 }
