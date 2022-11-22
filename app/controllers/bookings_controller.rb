@@ -5,7 +5,6 @@ class BookingsController < ApplicationController
   end
 
   def create
-    raise
     @animal = Animal.find(params[:animal_id])
     @booking = Booking.new(booking_params)
     @booking.user = current_user
