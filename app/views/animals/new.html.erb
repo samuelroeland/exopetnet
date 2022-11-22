@@ -2,7 +2,11 @@
 
 <h1>Add an animal</h1>
 
+<<<<<<< HEAD
 <%= simple_form_for [current_user, @animal] do |f|  %>
+=======
+<%= simple_form_for [@user, @animal] do |f|  %>
+>>>>>>> 27941bebc85f589fce4bdb1c236a7dbe7fd5d429
   <%= f.input :name %>
   <%= f.input :specie %>
   <%= f.input :description %>

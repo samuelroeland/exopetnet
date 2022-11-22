@@ -16,7 +16,7 @@ class AnimalsController < ApplicationController
     raise
     @animal = Animal.new(animal_params)
     if @animal.save
-      redirect_to root_path, notice: "animal was successfully created"
+      redirect_to animal_path, notice: "animal was successfully created"
     else
       render :new, status: :unprocessable_entity
     end
@@ -45,6 +45,6 @@ class AnimalsController < ApplicationController
   end
 
   def animal_params
-    params.require(:animal).permit(:name, :specie, :description, :price, :origin, :stock, :user_id)
+    params.require(:animal).permit(:name, :specie, :description, :price, :origin, :stock)
   end
 end
