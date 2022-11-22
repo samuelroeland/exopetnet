@@ -14,10 +14,10 @@ class AnimalsController < ApplicationController
   end
 
   def create
-    raise
     @animal = Animal.new(animal_params)
+    @animal.user = current_user
     if @animal.save
-      redirect_to animal_path, notice: "animal was successfully created"
+      redirect_to animals_path, notice: "animal was successfully created"
     else
       render :new, status: :unprocessable_entity
     end
