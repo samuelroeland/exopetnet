@@ -14,6 +14,13 @@
     <p>owner: <%= @animal.user.username %></p>
   </div>
 
+<<<<<<< HEAD
+<%= simple_form_for [current_user, @booking] do |f| %>
+  <%= f.input :arrival_date, as: :date, html5: true%>
+  <%= f.input :end_date, as: :date, html5: true %>
+  <%= f.submit %>
+<% end %>
+=======
   <div>
     <h2 class="card-trip-pricing"><%= @animal.price %>€</h2>
   </div>
@@ -24,5 +31,6 @@
     <% end %>
     <%= link_to "Delete", animal_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger text-light" %>
   </div>
+>>>>>>> master
 
 </div>
