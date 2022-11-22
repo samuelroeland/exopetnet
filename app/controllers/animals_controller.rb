@@ -36,7 +36,7 @@ class AnimalsController < ApplicationController
 
   def destroy
     @animal.destroy
-    redirect_to root_path, notice: 'animal was successfully destroyed'
+    redirect_to animals_path, notice: 'animal was successfully destroyed'
   end
 
   private
