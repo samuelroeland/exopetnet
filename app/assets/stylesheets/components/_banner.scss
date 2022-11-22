@@ -1,39 +1,33 @@
-body {
-  padding: 0;
-  margin: 0;
+.banner-carousel {
+  height:80vh;
+  border: 20px solid white;
+  margin: 25px solid white;
+  img{
+    height: 80vh;
+  }
 }
 
-.banner {
-  position: relative;
-  padding: 150px 0;
-  text-align: center;
+#indicator {
+  bottom: -35px;
+
 }
 
-.banner::before {
-  content: "";
-  position: absolute;
-  background-image: url('https://cdn.dribbble.com/userupload/2994641/file/original-b403858c073c1ddc96b16af1668cb574.jpg?compress=1&resize=752x');
-  background-size: cover;
-  background-position: center;
-  top: 0px;
-  right: 0px;
-  left: 0px;
-  bottom: 0px;
-  opacity: 0.15;
+.carousel-color-black {
+  color: black!important
 }
 
-.banner h1 {
-  margin: 0;
-  color:  rgb(22, 72, 10);
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 60px;
-  font-weight: bold;
-  opacity: 1;
+.carousel-options {
+  height: 75vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  font-family: 'Playfair Display', serif;
+  h1 {
+    size: 30px;
+    font-family: 'Playfair Display', serif;
+  }
 }
 
-.banner p {
-  font-size: 40px;
-  color: rgb(22, 72, 10);
-  text-shadow: 1px 1px 3px rgba(23, 83, 16, 0.2);
-  opacity: 1;
+#btn1 {
+  color: white;
 }
