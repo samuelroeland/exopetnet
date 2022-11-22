@@ -3,3 +3,4 @@
 
 <%= link_to "Back to list", animals_path %>
 <%= link_to "Back to main page", root_path %>
+<%= link_to "Delete this animal", @animal, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
