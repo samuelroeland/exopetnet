@@ -1,25 +1,36 @@
-<h2><%= @animal.name %></h2>
-<h5><%= @animal.specie %> - <%= @animal.origin %></h5>
+    <p><%= link_to "Back to list", animals_path %></p>
 
-<p><%= @animal.description %></p>
-<p><%= @animal.price %>€ - owner: <%= @animal.user.username %></p>
+    <p><%= link_to "Back to main page", root_path %></p>
 
-<% if @animal.image.attached? %>
-<%= cl_image_tag @animal.image.key, height: 300, width: 400, crop: :fill %>
-<% end %>
+<div class="show-animal-card m-3">
+  <% if @animal.image.attached? %>
+    <%= cl_image_tag @animal.image.key %>
+    <% end %>
+    
+  <div class="show-animal-card-infos">
+    <h2><%= @animal.name %></h2>
+    <h5><%= @animal.specie %> - <%= @animal.origin %></h5>
+    <p><%= @animal.description %></p>
+    <p>owner: <%= @animal.user.username %></p>
+  </div>
 
+<<<<<<< HEAD
 <%= simple_form_for [current_user, @booking] do |f| %>
   <%= f.input :arrival_date, as: :date, html5: true%>
   <%= f.input :end_date, as: :date, html5: true %>
   <%= f.submit %>
 <% end %>
+=======
+  <div>
+    <h2 class="card-trip-pricing"><%= @animal.price %>€</h2>
+  </div>
 
-<p><%= link_to "Back to list", animals_path %></p>
+  <div>
+    <% if policy(@animal).edit? %>
+    <p><%= link_to "Edit", edit_animal_path(@animal), class: "btn btn-success text-light"%></p>
+    <% end %>
+    <%= link_to "Delete", animal_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger text-light" %>
+  </div>
+>>>>>>> master
 
-<p><%= link_to "Back to main page", root_path %></p>
-
-<% if policy(@animal).edit? %>
-<p><%= link_to "Edit this animal", edit_animal_path(@animal) %></p>
-<% end %>
-
-<%= button_to "Destroy this animal", @animal, method: :delete if policy(@animal).destroy? %>
+</div>
