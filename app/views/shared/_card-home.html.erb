@@ -1,0 +1,13 @@
+<%=link_to animal_path(animal), class: "text-decoration-none" do %>
+  <div class="index-animal-card">
+    <%= cl_image_tag animal.image.key %>
+    <div class="index-animal-card-infos">
+      <h2>
+        <%= animal.name %>
+      </h2>
+      <p>
+        <%= animal.description %>
+      </p>
+    </div>
+  </div>
+<% end %>
