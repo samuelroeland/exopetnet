@@ -13,6 +13,7 @@ class AnimalsController < ApplicationController
   end
 
   def create
+    raise
     @animal = Animal.new(animal_params)
     if @animal.save
       redirect_to root_path, notice: "animal was successfully created"

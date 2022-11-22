@@ -2,7 +2,7 @@
 
 <h1>Add an animal</h1>
 
-<%= simple_form_for (@animal) do |f|  %>
+<%= simple_form_for [current_user, @animal] do |f|  %>
   <%= f.input :name %>
   <%= f.input :specie %>
   <%= f.input :description %>
