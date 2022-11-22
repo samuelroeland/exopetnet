@@ -1,6 +1,10 @@
 <h2><%= @animal.name %></h2>
 
 
-<%= link_to "Back to list", animals_path %>
-<%= link_to "Back to main page", root_path %>
-<%= link_to "Delete this animal", @animal, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+
+<p><%= link_to "Back to list", animals_path %></p>
+
+<p><%= link_to "Back to main page", root_path %></p>
+
+
+<%= button_to "Destroy this animal", @animal, method: :delete if policy(@animal).destroy? %>
