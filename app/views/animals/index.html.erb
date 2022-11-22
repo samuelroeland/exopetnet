@@ -7,8 +7,8 @@
   <% @animals.each do |animal| %>
     <%=link_to animal_path(animal), class: "text-decoration-none" do %>
       <div class="index-animal-card">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-          <div class="index-animal-card-infos">
+        <%= cl_image_tag animal.image.key %>
+        <div class="index-animal-card-infos">
           <h2>
             <%= animal.name %>
           </h2>
