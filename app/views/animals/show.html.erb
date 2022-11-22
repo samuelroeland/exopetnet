@@ -6,5 +6,8 @@
 
 <p><%= link_to "Back to main page", root_path %></p>
 
+<% if policy(@animal).edit? %>
+<p><%= link_to "Edit this animal", edit_animal_path(@animal) %></p>
+<% end %>
 
 <%= button_to "Destroy this animal", @animal, method: :delete if policy(@animal).destroy? %>
