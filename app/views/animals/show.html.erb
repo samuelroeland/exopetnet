@@ -8,6 +8,12 @@
 <%= cl_image_tag @animal.image.key, height: 300, width: 400, crop: :fill %>
 <% end %>
 
+<%= simple_form_for [current_user, @booking] do |f| %>
+<%= f.date :arrival_date%>
+<%= f.date :departure_date %>
+<%= f.submit %>
+<% end %>
+
 
 
 <p><%= link_to "Back to list", animals_path %></p>
