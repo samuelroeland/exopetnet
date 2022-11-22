@@ -4,7 +4,9 @@
 <p><%= @animal.description %></p>
 <p><%= @animal.price %>€ - owner: <%= @animal.user.username %></p>
 
+<% if @animal.image.attached? %>
 <%= cl_image_tag @animal.image.key, height: 300, width: 400, crop: :fill %>
+<% end %>
 
 
 
