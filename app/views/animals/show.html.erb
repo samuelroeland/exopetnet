@@ -15,9 +15,11 @@
   </div>
 
 
+
 <%= simple_form_for [current_user, @booking] do |f| %>
   <%= f.input :arrival_date, as: :date, html5: true%>
   <%= f.input :end_date, as: :date, html5: true %>
+  <%= f.input :animal_id, :as => :hidden, :input_html => { :value =>  @animal.id  } %>
   <%= f.submit %>
 <% end %>
 
