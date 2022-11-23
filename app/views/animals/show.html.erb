@@ -1,18 +1,85 @@
-    <p><%= link_to "Back to list", animals_path %></p>
+<div class= "container">
+  <div class="container">
+    <div class = "text-center m-3">
+      <h1> Rent <%= @animal.name %> 🌿 </h1>
+      <h2 class="p-4"> <strong> a wonderful <%= @animal.specie %> from <%= @animal.origin %></strong></h2>
+    </div>
+    <div class="row justify-content-center p-20 my-5">
+      <div class="col-12 col-lg-6">🌌</div>
+      <div class="col-12 col-lg-6">🌌</div>
+      <div class="col-12 col-lg-6">🌌</div>
+    </div>
 
-    <p><%= link_to "Back to main page", root_path %></p>
+    <div class="hiddenbuttons">
+    <div class="container py-5 px-4">
+      <% if policy(@animal).edit? %>
+      <p>This is your animal, do you want to edit or delete it?</p>
+      <p><%= link_to "Edit", edit_animal_path(@animal), class: "btn btn-outline"%></p>
+      <% end %>
+      <%= button_to "Destroy this Animal", @animal, class:'btn btn-outline-success', method: :delete if policy(@animal).destroy?%>
+    </div>
+    </div>
+
+    <div class="container mt-5">
+      <div class=" container mt-4">
+        <div class="container mb-4 d-flex">
+          <div class="details my-4  col-12 col-lg-4 col-sm-12">
+            <h5>Description of the animal 🦚</h5>
+            <hr>
+              <p><%= @animal.description %></p>
+            <h5>Price 💸</h5>
+              <p><%= @animal.price %>€</p>
+          </div>
+          <div class="col-12 col-lg-8 mt-4 mx-5 px-3">
+            <h5>How cute? And it can be yours...</h5>
+            <hr>
+            <%= simple_form_for [current_user, @booking] do |f| %>
+              <div class="form-label my-4 mb-5">
+                <%= f.input :arrival_date, as: :date, html5: true%>
+                <%= f.input :end_date, as: :date, html5: true %>
+                <%= f.input :animal_id, :as => :hidden, :input_html => { :value =>  @animal.id  } %>
+                  <div>
+                <%= f.submit class: "btn btn-outline" %>
+                  </div>
+              </div>
+              <p>⚡️ Hurry up ! <%= @animal.user.username %> only has <%= @animal.stock %> <%= @animal.specie %> left ⚡️</p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-between">
+    <p><%= link_to "Back to list", animals_path, class:"btn btn-outline" %></p>
+
+    <p><%= link_to "Back to main page", root_path, class: "btn btn-outline" %></p>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+#########################################################################################
+
+<p><%= link_to "Back to list", animals_path %></p>
+
+<p><%= link_to "Back to main page", root_path %></p>
 
 <div class="show-animal-card m-3">
   <% if @animal.image.attached? %>
     <%= cl_image_tag @animal.image.key %>
     <% end %>
 
-  <div class="show-animal-card-infos">
-    <h2><%= @animal.name %></h2>
-    <h5><%= @animal.specie %> - <%= @animal.origin %></h5>
-    <p><%= @animal.description %></p>
-    <p>owner: <%= @animal.user.username %></p>
-  </div>
+<div class="show-animal-card-infos">
+  <h2><%= @animal.name %></h2>
+  <h5><%= @animal.specie %> - <%= @animal.origin %></h5>
+  <p><%= @animal.description %></p>
+  <p>owner: <%= @animal.user.username %></p>
+</div>
 
 
 
