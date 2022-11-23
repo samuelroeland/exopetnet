@@ -1,0 +1,57 @@
+.jumbotron {
+  background-color: #a3c19b !important;
+}
+
+.jumbotron-fluid {
+  padding-right: 0;
+  padding-left: 0;
+  border-radius: 0;
+}
+
+.container .jumbo {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.jumbo .item {
+  margin-top: 5px;
+  font-family: 'Montserrat', sans-serif;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  width: 100%;
+  padding-right: 50px;
+}
+
+.jumbotron h1 {
+  margin-top: 0;
+  display: block;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.container .jumbo>div {
+  flex: 0 50%;
+}
+
+.display-4 {
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.text-center {
+  text-align: center !important;
+}
