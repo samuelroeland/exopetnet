@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>All my bookings:</h1>
+  <ul>
+    <% @bookings.each do |booking| %>
+    <li>
+      User name: <%= booking.user.username%>
+    </li>
+    <li>
+      Animal name: <%= booking.animal.name %>
+    </li>
+    <li>
+      Arrival date: <%= booking.arrival_date %>
+    </li>
+    <li>
+      Departure date: <%= booking.end_date %>
+    </li>
+    <%= link_to "Edit this order", class:"btn btn-outline-success"%>
+    <hr>
+
+    <% end %>
+  </ul>
+</div>
