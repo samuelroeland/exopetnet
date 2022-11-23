@@ -1,6 +1,6 @@
 <%= link_to animal_path(animal), class: "text-decoration-none" do %>
-  <div class="card-category position-relative" style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))'>
-    <%= cl_image_tag animal.images[1].key %>
+  <div class="card-category position-relative">
+    <%= cl_image_tag animal.images[0].key %>
     <%= animal.name %>
      <p class="position-absolute tag-price m-0"><%= animal.price %> €</p>
       <p class="position-absolute tag-origin m-0"><%= animal.origin %></p>
