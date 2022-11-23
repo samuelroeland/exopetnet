@@ -1,3 +1,4 @@
+
 <div class= "container">
   <div class="container">
     <div class = "text-center m-3">
@@ -61,46 +62,3 @@
 
 
 
-
-
-#########################################################################################
-
-<p><%= link_to "Back to list", animals_path %></p>
-
-<p><%= link_to "Back to main page", root_path %></p>
-
-<div class="show-animal-card m-3">
-  <% if @animal.image.attached? %>
-    <%= cl_image_tag @animal.image.key %>
-    <% end %>
-
-<div class="show-animal-card-infos">
-  <h2><%= @animal.name %></h2>
-  <h5><%= @animal.specie %> - <%= @animal.origin %></h5>
-  <p><%= @animal.description %></p>
-  <p>owner: <%= @animal.user.username %></p>
-</div>
-
-
-
-<%= simple_form_for [current_user, @booking] do |f| %>
-  <%= f.input :arrival_date, as: :date, html5: true%>
-  <%= f.input :end_date, as: :date, html5: true %>
-  <%= f.input :animal_id, :as => :hidden, :input_html => { :value =>  @animal.id  } %>
-  <%= f.submit %>
-<% end %>
-
-  <div>
-    <h2 class="card-trip-pricing"><%= @animal.price %>€</h2>
-  </div>
-
-
-  <div>
-    <% if policy(@animal).edit? %>
-    <p><%= link_to "Edit", edit_animal_path(@animal), class: "btn btn-success text-light"%></p>
-    <% end %>
-    <%= button_to "Destroy this Animal", @animal, method: :delete if policy(@animal).destroy? %>
-  </div>
-
-
-</div>
