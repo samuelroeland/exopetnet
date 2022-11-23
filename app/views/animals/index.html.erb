@@ -1,12 +1,26 @@
-<div class="text-center m-4">
-  <h1>Animals</h1>
-</div>
+<div class="container">
+  <div class="text-center m-4 p-4">
+    <h1>Here are all the animals available to rent 🐲</h1>
+  </div>
 
-<div class="cards m-5">
-  <%#= link_to "Back to main page", root_path %>
+  <div class="row" >
   <% @animals.each do |animal| %>
-    <%#= render "shared/card-home", animal: animal %>
-    <%= render "shared/card-index", animal: animal %>
+    <div class="col-3">
+      <div class="cardszoe">
+        <%= cl_image_tag animal.images[0].key, class: 'imageee' %>
+        <div class="card-body">
+          <h5 class="card-title"> <%= animal.name %></h5>
+          <p class="card-text"> <%= animal.specie %> from <%= animal.origin %></p>
+          <%= link_to "Rent it for €#{animal.price}", animal_path(animal), class:'btn btn-outline-success'%>
+        </div>
+      </div>
+    </div>
   <% end %>
 </div>
 
+<div class = "container m-5">
+  <p>Do you want to rent your animals so other people can give them some love ? 💚</p>
+  <%= link_to "Rent your animal", new_animal_path, class:'btn btn-outline'%>
+
+</div>
+</div>
