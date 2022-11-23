@@ -3,27 +3,25 @@
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "https://i.dailymail.co.uk/1s/2021/09/14/23/47929525-0-image-a-7_1631660140068.jpg" %>
     <% end %>
-
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-light" type="submit">Search</button>
+    </form>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", root_path, class: "nav-link" %>
-          </li>
-          <%# <li class="nav-item">
-            <% link_to "Messages", "#", class: "nav-link" %>
           <li class="nav-item">
             <div class="nav-link">
-              <strong>Hi</strong>
-              <%= current_user.username if user_signed_in? %>
+              <strong>Hi</strong> <%= current_user.username if user_signed_in? %>
             </div>
           </li>
           <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Previous orders", "#", class: "dropdown-item" %>
               <%= link_to "Current orders", "#", class: "dropdown-item" %>
@@ -32,13 +30,12 @@
             </div>
           </li>
         <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <li class="nav-item dropdown">
+            <div class="d-flex flex-direction-row">
+              <%= link_to "Login", new_user_session_path, class: "btn btn-outline-success mx-2" %>
+              <%= link_to "Sign up", new_user_registration_path, class: "btn btn-success text-light" %>
+            </div>
           </li>
-          <li class="nav-item">
-            <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
-          </li>
-
         <% end %>
       </ul>
     </div>
