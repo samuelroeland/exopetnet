@@ -6,9 +6,9 @@
       <h2 class="p-4"> <strong> a wonderful <%= @animal.specie %> from <%= @animal.origin %></strong></h2>
     </div>
     <div class="row justify-content-center p-20 my-5">
-      <div class="col-12 col-lg-6">🌌</div>
-      <div class="col-12 col-lg-6">🌌</div>
-      <div class="col-12 col-lg-6">🌌</div>
+      <div class="col-12 col-lg-6"> <%=cl_image_tag @animal.images[0].key%></div>
+      <div class="col-12 col-lg-6"> <%=cl_image_tag @animal.images[1].key%></div>
+      <div class="col-12 col-lg-6"> <%=cl_image_tag @animal.images[2].key%></div>
     </div>
 
     <div class="hiddenbuttons">
@@ -56,9 +56,3 @@
     <p><%= link_to "Back to main page", root_path, class: "btn btn-outline" %></p>
   </div>
 </div>
-
-
-
-
-
-
