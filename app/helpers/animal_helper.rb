@@ -1,4 +1,5 @@
 module AnimalHelper
+
   def cloudinary_image(animal, tagClass)
     if animal.images.attached?
       cl_image_tag animal.images[0].key, class: tagClass
