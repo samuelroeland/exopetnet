@@ -3,7 +3,7 @@
   <div class="container">
     <div class = "text-center m-3">
       <h1> Rent <%= @animal.name %> 🌿 </h1>
-      <h2 class="p-4"> <strong> a wonderful <%= @animal.specie %> from <%= @animal.origin %></strong></h2>
+      <h2 class="showh2 p-4"> <strong> a wonderful <%= @animal.specie %> from <%= @animal.origin %></strong></h2>
     </div>
     <div class="container">
       <div class="row my-5">
@@ -17,9 +17,9 @@
     <div class="container py-5 px-4">
       <% if policy(@animal).edit? %>
       <p>This is your animal, do you want to edit or delete it?</p>
-      <p><%= link_to "Edit", edit_animal_path(@animal), class: "btn btn-outline"%></p>
+      <p><%= link_to "Edit", edit_animal_path(@animal), class: "btn-flat"%></p>
       <% end %>
-      <%= button_to "Destroy this Animal", @animal, class:'btn btn-outline-success', method: :delete if policy(@animal).destroy?%>
+      <%= button_to "Destroy this Animal", @animal, class:'btn-flat', method: :delete if policy(@animal).destroy?%>
     </div>
     </div>
 
@@ -27,7 +27,7 @@
       <div class=" container mt-4">
         <div class="container mb-4 d-flex">
           <div class="details my-4  col-12 col-lg-4 col-sm-12">
-            <h5>Description of the animal 🦚</h5>
+            <h5 class="showh5">Description of the animal 🦚</h5>
             <hr>
               <p><%= @animal.description %></p>
             <h5>Price 💸</h5>
@@ -42,7 +42,7 @@
                 <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endTime" }, id:'end_time' } %>
                 <%= f.input :animal_id, :as => :hidden, :input_html => { :value =>  @animal.id  } %>
                   <div>
-                <%= f.submit class: "btn btn-outline" %>
+                <%= f.submit class: "btn-flat" %>
                   </div>
               </div>
               <p>⚡️ Hurry up ! <%= @animal.user.username %> only has <%= @animal.stock %> <%= @animal.specie %> left ⚡️</p>
@@ -53,8 +53,8 @@
     </div>
   </div>
   <div class="d-flex justify-content-between">
-    <p><%= link_to "Back to list", animals_path, class:"btn btn-outline" %></p>
+    <p><%= link_to "Back to list", animals_path, class:"btn-flat" %></p>
 
-    <p><%= link_to "Back to main page", root_path, class: "btn btn-outline" %></p>
+    <p><%= link_to "Back to main page", root_path, class: "btn-flat" %></p>
   </div>
 </div>
