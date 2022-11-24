@@ -14,6 +14,7 @@
     <%= link_to "Delete Order", root_path, class:"btn-flat index-btn"%>
       <div class="container image-container">
         <%# ANIMAL PICTURE %>
+        <%= cl_image_tag booking.animal.images[0].key %>
       </div>
     </div>
     <% end %>
