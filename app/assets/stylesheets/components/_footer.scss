@@ -7,22 +7,26 @@
   padding: 0px 50px;
   color: #ffffff;
 }
+
 .footer-links {
   display: flex;
   align-items: center;
 }
+
 .footer-links a {
   color: rgb(255, 255, 255);
   opacity: 0.3;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 17px;
   padding: 0px 10px;
   display: inline-block;
 }
+
 .footer-links a:hover {
   color: white;
   opacity: 1;
 }
+
 .footer .fa-heart {
   color: #fb0404;
 }

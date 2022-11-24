@@ -1,15 +1,14 @@
-.carousel-inner .btn-flat {
+.btn-flat {
   color: white;
-  padding: 8px 8px;
-  border-radius: .01px;
-  font-size: 12px;
+  padding: 4px 4px;
+  border-radius: .2px;
+  font-size: 18px;
   background: #a3c19b;
   transition: background 0.2s ease;
-  border-radius: 5px;
-  opacity: 0.9;
+  border-radius: 10px;
 }
 
-.carousel-inner .btn-flat:hover {
+.btn-flat:hover {
   background: #3c4f3d;
   color: white;
 }
