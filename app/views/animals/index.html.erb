@@ -22,5 +22,10 @@
   <p>Do you want to rent your animals so other people can give them some love ? 💚</p>
   <%= link_to "Rent your animal", new_animal_path, class:'btn btn-outline'%>
 
+  <div style="width: 100%; height: 300px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
 </div>
 </div>
