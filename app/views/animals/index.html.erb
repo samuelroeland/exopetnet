@@ -14,7 +14,7 @@
   <% @animals.each do |animal| %>
     <div class="col-3">
       <div class="cardszoe">
-        <%= cl_image_tag animal.images[0].key, class: 'imageee' %>
+        <%= cloudinary_image(animal) %>
         <div class="card-body">
           <h5 class="card-title"> <%= animal.name %></h5>
           <p class="card-text"> <%= animal.specie %> from <%= animal.origin %></p>
