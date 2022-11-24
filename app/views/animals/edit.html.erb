@@ -3,14 +3,19 @@
 
   <h1 class="text-center">Edit your <%= @animal.name %></h1>
 
-  <%= simple_form_for [@animal] do |f|  %>
+ <%= simple_form_for [@animal] do |f|  %>
     <%= f.input :name %>
     <%= f.input :specie %>
     <%= f.input :description %>
     <%= f.input :price %>
     <%= f.input :origin %>
+    <%= f.input :address,
+      input_html: {data: {address_autocomplete_target: "address"}},
+      wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
+    %>
     <%= f.input :stock %>
-    <%= f.submit class: "btn btn-success text-light" %>
+    <%= f.input :images, :input_html => { :multiple => true }%>
+    <%= f.submit  class: "btn btn-success text-light"%>
   <% end %>
   </div>
 </div>
