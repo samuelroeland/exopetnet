@@ -5,10 +5,14 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <form class="d-flex" role="search">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-light" type="submit">Search</button>
-    </form>
+    <%= form_with url: animal_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control me-2",
+    placeholder: "Find your dream pet"
+  %>
+  <%= submit_tag "Search", class: "btn btn-light" %>
+<% end %>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
