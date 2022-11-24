@@ -1,0 +1,20 @@
+.index-title h1{
+  color: #0C4536;
+}
+
+.imageee{
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.btn{
+  color: #5DB5A2;
+}
+
+.cards{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+  flex-grow: 1px;
+}

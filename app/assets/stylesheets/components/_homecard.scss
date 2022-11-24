@@ -16,10 +16,24 @@
   h4 {
     margin-top: 20px;
     margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.2;
+    display: block;
+    font-family: 'Merriweather Sans', sans-serif;
   }
   p {
     margin-top: 20px;
     margin-bottom: 20px;
+    text-align: center;
+    opacity: .6;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+    font-family: 'Poppins', sans-serif;
+  }
+  img {
+    height: 200px;
+    border-radius: 3px;
   }
 }
 
@@ -35,6 +49,12 @@
   }
 }
 
+.homepage-cards-cards {
+  display: flex;
+  justify-content: space-around;
+  align-self: center;
+}
+
 .preveimg {
   height: 493.150685px;
   width: 500px;
@@ -45,10 +65,4 @@
 
 .preve {
   display: flex;
-}
-
-.homepage-cards-cards {
-  display: flex;
-  justify-content: space-around;
-  align-self: center;
 }

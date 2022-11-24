@@ -28,10 +28,14 @@
   justify-content: space-between;
   flex-direction: column;
   font-family: 'Poppins', sans-serif;
+  text-align: center;
   font-size: 24px;
   h1 {
     size: 40px;
     font-family: 'Merriweather Sans', sans-serif;
+  }
+  p {
+    text-align: center;
   }
 }
 
@@ -46,4 +50,9 @@
   align-content: center;
   justify-content: space-around;
   font-family: 'Merriweather Sans', sans-serif;
+  font-size: 40px;
+}
+
+body {
+  background-color: white !important;
 }

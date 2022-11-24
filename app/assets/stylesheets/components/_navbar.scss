@@ -8,6 +8,15 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  color: darkblue;
+  color: $green;
   width: 40px;
+}
+
+.navbar-lewagon .navbar-brand {
+  text-decoration: none;
+  color: $green;
+}
+
+.navbar-lewagon .navbar-brand:hover {
+  color: $lightgreen;
 }

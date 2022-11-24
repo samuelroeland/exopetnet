@@ -10,7 +10,7 @@
     <%= f.input :price %>
     <%= f.input :origin %>
     <%= f.input :stock %>
-    <%= f.input :image, as: :file %>
+    <%= f.input :images, :input_html => { :multiple => true }%>
     <%= f.submit  class: "btn btn-success text-light"%>
   <% end %>
   </div>

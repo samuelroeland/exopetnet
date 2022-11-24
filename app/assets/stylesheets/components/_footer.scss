@@ -19,6 +19,7 @@
   text-decoration: none;
   font-size: 17px;
   padding: 0px 10px;
+  display: inline-block;
 }
 
 .footer-links a:hover {
@@ -28,4 +29,9 @@
 
 .footer .fa-heart {
   color: #fb0404;
+}
+
+.footer-left, .footer-center, .footer-right {
+  display: flex;
+  flex-direction: column;
 }

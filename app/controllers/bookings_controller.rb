@@ -1,4 +1,8 @@
 class BookingsController < ApplicationController
+  def index
+    @bookings = Booking.where(user_id: current_user.id)
+  end
+
   def new
     # @animal = Animal.find(params[:animal_id])
     @booking = Booking.new
@@ -9,12 +13,13 @@ class BookingsController < ApplicationController
     @booking.user_id = current_user.id
 
     if @booking.save
-      redirect_to animals_path(@animal)
+      redirect_to user_bookings_path(@booking.user_id)
     else
       raise
       redirect_to root_path
     end
   end
+
 
   private
 
