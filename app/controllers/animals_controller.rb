@@ -4,6 +4,13 @@ class AnimalsController < ApplicationController
 
   def index
     @animals = Animal.all
+    @markers = @animals.geocoded.map do |animal|
+      {
+        lat: animal.latitude,
+        lng: animal.longitude
+        # info_window: render_to_string(partial: "info_window", locals: { animal: animal })
+      }
+    end
   end
 
   def show
@@ -52,6 +59,6 @@ class AnimalsController < ApplicationController
   end
 
   def animal_params
-    params.require(:animal).permit(:name, :specie, :description, :price, :origin, :stock, images: [])
+    params.require(:animal).permit(:name, :specie, :description, :price, :origin, :stock, :address, images: [])
   end
 end
