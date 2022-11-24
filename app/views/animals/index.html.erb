@@ -3,6 +3,13 @@
     <h1 class="index-title">Here are all the animals available to rent 🐲</h1>
   </div>
 
+  <div class="m-4 p-4">
+  <div style="width: 100%; height: 350px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+  </div>
   <div class="row" >
   <% @animals.each do |animal| %>
     <div class="col-3">
@@ -20,6 +27,7 @@
 
 <div class = "container m-5">
   <p>Do you want to rent your animals so other people can give them some love ? 💚</p>
+
   <%= link_to "Rent your animal", new_animal_path, class:'btn btn-flat'%>
 
 </div>
