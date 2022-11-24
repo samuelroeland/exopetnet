@@ -7,8 +7,9 @@ class AnimalsController < ApplicationController
     @markers = @animals.geocoded.map do |animal|
       {
         lat: animal.latitude,
-        lng: animal.longitude
-        # info_window: render_to_string(partial: "info_window", locals: { animal: animal })
+        lng: animal.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { animal: animal }),
+        image_url: helpers.asset_url("/app/assets/images/logo.png")
       }
     end
   end

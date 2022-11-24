@@ -1,0 +1,13 @@
+<h2 class="h2popup"><%= animal.name %></h2>
+
+  <div class="row" >
+    <div class="col-3">
+      <div class="popupcards">
+        <%= cl_image_tag animal.images[0].key, class: 'imagepopup' %>
+        <div class="card-body">
+          <p class="text-center"> <%= animal.specie %>
+          <p><%= link_to "More details", animal_path(animal), class:'aleluia'%></p>
+        </div>
+      </div>
+    </div>
+</div>
