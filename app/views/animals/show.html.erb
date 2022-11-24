@@ -30,14 +30,14 @@
       <div class=" container mt-4">
         <div class="container mb-4 d-flex">
           <div class="details my-4  col-12 col-lg-4 col-sm-12">
-            <h5 class="showh5">Description of the animal 🦚</h5>
+            <h5 class="h5show">Description of the animal 🦚</h5>
             <hr>
-              <p><%= @animal.description %></p>
+              <p class="justifyshow"><%= @animal.description %></p>
             <h5>Price 💸</h5>
               <p><%= @animal.price %>€</p>
           </div>
           <div class="col-12 col-lg-8 mt-4 mx-5 px-3">
-            <h5>How cute? And it can be yours...</h5>
+            <h5 class="h5show">How cute? And it can be yours...</h5>
             <hr>
             <%= simple_form_for [current_user, @booking], data: { controller: 'flatpickr' } do |f| %>
               <div class="form-label my-4 mb-5">
