@@ -8,8 +8,10 @@
 @import "font-awesome";
 @import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder";
 
+
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
 @import "bootstrap/scss/bootstrap";
 @import "pages/show";
+@import "flatpickr/dist/flatpickr.css";
