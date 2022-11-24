@@ -1,4 +1,3 @@
-
 <div class= "container">
   <div class="container">
     <div class = "text-center m-3">
@@ -7,13 +6,17 @@
     </div>
     <div class="container">
       <div class="row my-5">
-        <div class="col-4"> <%=cl_image_tag @animal.images[0].key, width: 350, height: 350, class: "imageee"%></div>
-        <div class="col-4"> <%=cl_image_tag @animal.images[1].key, width: 350, height: 350, class: "imageee"%></div>
-        <div class="col-4"> <%=cl_image_tag @animal.images[2].key, width: 350, height: 350, class:"imageee"%></div>
+      <% i = @animal.images.length - 1 %>
+      <% while i >= 0 %>
+        <div class="col-4 my-3"> <%=cl_image_tag @animal.images[i].key, width: 350, height: 350, class: "imageee"%></div>
+
+      <% i -= 1 %>
+      <% end %>
       </div>
+
     </div>
 
-    <div class="hiddenbuttons">
+
     <div class="container py-5 px-4">
       <% if policy(@animal).edit? %>
       <p>This is your animal, do you want to edit or delete it?</p>
@@ -36,10 +39,10 @@
           <div class="col-12 col-lg-8 mt-4 mx-5 px-3">
             <h5>How cute? And it can be yours...</h5>
             <hr>
-            <%= simple_form_for [current_user, @booking] do |f| %>
+            <%= simple_form_for [current_user, @booking], data: { controller: 'flatpickr' } do |f| %>
               <div class="form-label my-4 mb-5">
-                <%= f.input :arrival_date, as: :date, html5: true%>
-                <%= f.input :end_date, as: :date, html5: true %>
+                <%= f.input :arrival_date, as: :string, input_html: { data: { flatpickr_target: "arrivalTime" } }%>
+                <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endTime" }, id:'end_time' } %>
                 <%= f.input :animal_id, :as => :hidden, :input_html => { :value =>  @animal.id  } %>
                   <div>
                 <%= f.submit class: "btn btn-outline" %>
@@ -51,7 +54,7 @@
         </div>
       </div>
     </div>
-  </div>
+
   <div class="d-flex justify-content-between">
     <p><%= link_to "Back to list", animals_path, class:"btn btn-outline" %></p>
 
