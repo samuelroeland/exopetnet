@@ -9,4 +9,11 @@ class Animal < ApplicationRecord
   validates :price, presence: true
   validates :origin, presence: true
   has_many_attached :images
+  include PgSearch::Model
+  pg_search_scope :search_by_specie_and_origin,
+  against: %i[specie origin],
+  using:
+  {
+    tsearch: { prefix: true }
+  }
 end
