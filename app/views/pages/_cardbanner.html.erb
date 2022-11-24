@@ -8,7 +8,11 @@
       <h4>Find Happiness with Animals</h4>
       <p>Phasellus a est in lacus pharetra viverra vitae at nunc. Suspendisse suscipit eleifend dui sed facilisis.<p>
       <div>
-        <%= link_to "Create an Account", new_user_registration_path, class: "btn-flat" %>
+        <% if current_user %>
+        <%= link_to "Go to all bookings", user_bookings_path(current_user), class: "btn-flat"%>
+        <% else %>
+          <%= link_to "Create an Account", new_user_registration_path, class: "btn-flat" %>
+        <% end %>
       </div>
     </div>
     <div class="home-card">
