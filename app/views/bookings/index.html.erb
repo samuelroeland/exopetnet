@@ -1,22 +1,21 @@
 <div class="container">
-  <h1>All my bookings:</h1>
-  <ul>
+<br>
+  <h1>My Bookings</h1>
+  <br>
     <% @bookings.each do |booking| %>
-    <li>
-      User name: <%= booking.user.username%>
-    </li>
-    <li>
-      Animal name: <%= booking.animal.name %>
-    </li>
-    <li>
-      Arrival date: <%= booking.arrival_date %>
-    </li>
-    <li>
-      Departure date: <%= booking.end_date %>
-    </li>
-    <%= link_to "Edit this order", class:"btn btn-outline-success"%>
-    <hr>
+    <%= link_to animal_path(booking.animal_id) do %>
 
+  <div class="container individual-booking">
+      <p class="bookings-p">Animal name: <%= booking.animal.name %></p>
+      <hr>
+      <p class="bookings-p">Arrival date: <%= booking.arrival_date %></p>
+      <p class="bookings-p">Departure date: <%= booking.end_date %></p>
+    <%= link_to "Edit Order", root_path, class:"btn-flat index-btn"%>
+    <%= link_to "Delete Order", root_path, class:"btn-flat index-btn"%>
+      <div class="container image-container">
+        <%# ANIMAL PICTURE %>
+      </div>
+    </div>
     <% end %>
-  </ul>
+    <% end %>
 </div>
