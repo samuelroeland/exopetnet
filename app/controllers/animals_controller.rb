@@ -12,14 +12,11 @@ class AnimalsController < ApplicationController
         image_url: helpers.asset_url("/app/assets/images/logo.png")
       }
     end
-
-    def index
       if params[:query].present?
         @animals = policy_scope(Animal.search_by_specie_and_origin(params[:query]))
       else
         @animals = policy_scope(Animal)
       end
-    end
   end
 
   def show
