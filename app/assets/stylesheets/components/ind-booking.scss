@@ -1,16 +1,35 @@
-.container .individual-booking {
-  padding: 20px;
+.individual-booking {
   background-color: white;
   border: 2px;
   border-radius: 12px;
-  box-shadow: 0 0 1px 3px rgba(223, 223, 223, 0.932);
+  box-shadow: 0 0 15px #a3c19b;
   margin-bottom: 30px;
-  a {
-    text-decoration: none !important;
+  display: flex !important;
+}
+.booking-link {
+  color: black;
+  text-decoration: none !important;
+  &:hover {
     color: black;
   }
 }
 
+.booking-text {
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  padding: 70px;
+}
+
 .bookings-p {
-  padding: 1px;
+  padding-top: 20px;
+  font-size: 25px;
+}
+
+.image-container-booking {
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
+  width: 100%;
+  border-radius: 0 12px 12px 0;
 }
