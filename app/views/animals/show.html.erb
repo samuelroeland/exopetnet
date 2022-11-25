@@ -40,17 +40,16 @@
           <div class="col-12 col-lg-8 mt-4 mx-5 px-3">
             <h5 class="h5show">How cute? And it can be yours...</h5>
             <hr>
-            <%= simple_form_for [current_user, @booking], data: { controller: 'flatpickr' } do |f| %>
-              <div class="form-label my-4 mb-5">
-                <%= f.input :arrival_date, as: :string, input_html: { data: { flatpickr_target: "arrivalTime" } }%>
-                <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endTime" }, id:'end_time' } %>
-                <%= f.input :animal_id, :as => :hidden, :input_html => { :value =>  @animal.id  } %>
-                  <div>
-                <%= f.submit class: "btn-flat" %>
-                  </div>
-              </div>
-              <p>⚡️ Hurry up ! <%= @animal.user.username %> only has <%= @animal.stock %> <%= @animal.specie %> left ⚡️</p>
+              <%= simple_form_for [@animal, @booking], data: { turbo: false,controller: 'flatpickr' } do |f| %>
+                <div class="form-label my-4 mb-5">
+                  <%= f.input :arrival_date, as: :string, input_html: { data: { flatpickr_target: "arrivalTime" } }%>
+                  <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endTime" }, id:'end_time' } %>
+                <div>
+                  <%= f.submit class: "btn-flat" %>
+                    </div>
+                </div>
             <% end %>
+            <p>⚡️ Hurry up ! <%= @animal.user.username %> only has <%= @animal.stock %> <%= @animal.specie %> left ⚡️</p>
           </div>
         </div>
       </div>
