@@ -16,12 +16,12 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/animals">All Animals</a>
+        </li>
         <% if user_signed_in? %>
         <li class="nav-item active">
           <%= link_to "Home", root_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/animals">All Animals</a>
         </li>
         <li class="nav-item">
         <div class="nav-link">
@@ -31,9 +31,9 @@
         <li class="nav-item dropdown">
           <img class="avatar dropdown-toggle me-3" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/random" />
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <%= link_to "Profile", "#", class: "dropdown-item"  %>
+            <%= link_to "Profile", my_bookings_path , class: "dropdown-item"  %>
             <%= link_to "Add Animal", new_animal_path, class: "dropdown-item"  %>
-            <%= link_to "All Animals", animals_path, class: "dropdown-item"  %>
+
             <%= link_to "My Bookings", my_bookings_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
         </div>
