@@ -52,45 +52,45 @@
   box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.2);
 }
 
-.index-animal-card {
-  overflow: hidden;
-  height: 120px;
-  width: 500px;
-  background: white;
-  box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.2);
-  display: flex;
-  align-items: center;
-  border-radius: 4px;
-  margin: 0 auto;
-  margin-bottom: 10px;
-}
+// .index-animal-card {
+//   overflow: hidden;
+//   height: 120px;
+//   width: 500px;
+//   background: white;
+//   box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.2);
+//   display: flex;
+//   align-items: center;
+//   border-radius: 4px;
+//   margin: 0 auto;
+//   margin-bottom: 10px;
+// }
 
-.index-animal-card .index-animal-card-infos {
-  padding: 20px;
-  border-radius: 4px;
-}
+// .index-animal-card .index-animal-card-infos {
+//   padding: 20px;
+//   border-radius: 4px;
+// }
 
-.index-animal-card img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
-}
+// .index-animal-card img {
+//   height: 100%;
+//   width: 120px;
+//   object-fit: cover;
+// }
 
-.index-animal-card h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-  color: black;
-}
+// .index-animal-card h2 {
+//   font-size: 16px;
+//   font-weight: bold;
+//   margin: 0;
+//   color: black;
+// }
 
-.index-animal-card p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-  color: black;
-}
+// .index-animal-card p {
+//   font-size: 12px;
+//   line-height: 1.4;
+//   opacity: .7;
+//   margin-bottom: 0;
+//   margin-top: 8px;
+//   color: black;
+// }
 
 .cards {
   display: grid;
@@ -189,5 +189,39 @@
 .image-container {
   height: 30px;
   width: 30px;
+
+}
+
+.cards-index-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 16px;
+    flex-grow: 1;
+    /* margin: 16px 16px 0 16px; */
+    padding: 10px;
+}
+
+.card-index-page {
+  width: 20rem;
+  box-shadow: 0 0 15px #a3c19b;
+  border-radius: 12px;
+  padding-bottom: 15px;
+}
+
+.index-container {
+  display: flex;
+}
+
+#map {
+  position: sticky;
+  padding: 10px;
+  width: 50%;
+  height: 100vh;
+}
+
+#image-index-corner {
+  border-top-left-radius: 4%;
+  border-top-right-radius: 4%;
+
 
 }
