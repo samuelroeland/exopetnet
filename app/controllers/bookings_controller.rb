@@ -1,12 +1,10 @@
 class BookingsController < ApplicationController
   def create
-
     @animal = Animal.find(params[:animal_id])
     @booking = Booking.new(booking_params)
     @booking.animal = @animal
     @booking.user = current_user
     authorize @booking
-
 
     if @booking.save
       redirect_to my_bookings_path
@@ -14,7 +12,6 @@ class BookingsController < ApplicationController
       render "animals/show", status: :unprocessable_entity
     end
   end
-
 
   private
 
