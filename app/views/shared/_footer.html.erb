@@ -3,8 +3,13 @@
     This footer is made with <i class="fas fa-heart"></i> at Le Wagon © 2022
   </div>
   <div class="footer-links">
-    <a href="#">Home</a>
-    <a href="#">All Animals</a>
-    <a href="#">Sign up</a>
+    <%= link_to "Home", root_path %>
+    <%= link_to "All Animals", animals_path %>
+    <% if current_user%>
+      <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete} %>
+    <% else %>
+      <%= link_to "Sign up", new_user_session_path %>
+    <% end %>
+
   </div>
 </div>
