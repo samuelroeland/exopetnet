@@ -20,11 +20,10 @@
 
     <div class="container py-5 px-4">
       <% if policy(@animal).edit? %>
-      <p>This is your animal, do you want to edit or delete it?</p>
-      <p><%= link_to "Edit", edit_animal_path(@animal), class: "btn-flat"%></p>
+        <p>This is your animal, do you want to edit or delete it?</p>
+        <p><%= link_to "Edit", edit_animal_path(@animal), class: "btn-flat"%></p>
+        <%= button_to "Destroy this Animal", @animal, class:'btn-flat', method: :delete if policy(@animal).destroy?%>
       <% end %>
-      <%= button_to "Destroy this Animal", @animal, class:'btn-flat', method: :delete if policy(@animal).destroy?%>
-    </div>
     </div>
 
     <div class="container mt-5">
