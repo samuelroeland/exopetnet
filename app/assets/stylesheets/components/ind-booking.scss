@@ -6,6 +6,11 @@
   margin-bottom: 30px;
   display: flex !important;
 }
+
+.bookingsh1 {
+  padding-left: 4%;
+}
+
 .booking-link {
   color: black;
   text-decoration: none !important;
@@ -14,11 +19,15 @@
   }
 }
 
+.mybookings_combined {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
 .booking-text {
   padding: 60px;
   display: flex;
   flex-direction: column;
-  padding: 70px;
 }
 
 .bookings-p {
