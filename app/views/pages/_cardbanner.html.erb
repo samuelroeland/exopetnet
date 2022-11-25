@@ -1,50 +1,59 @@
-<div class="homepage-cards-cards">
-    <div class="home-card">
-      <img src="<%= %w(https://www.rd.com/wp-content/uploads/2020/05/GettyImages-143405634-scaled.jpg?resize=1536,1022
-        https://www.rd.com/wp-content/uploads/2020/05/GettyImages-988272970-scaled.jpg?resize=1536,1022
-        https://www.rd.com/wp-content/uploads/2020/05/GettyImages-164464932-scaled.jpg?resize=1536,1022
-        https://www.rd.com/wp-content/uploads/2020/05/GettyImages-548004897-scaled.jpg?resize=1536,1222
-        https://www.rd.com/wp-content/uploads/2021/04/GettyImages-158050945.jpg?resize=1536,1024).sample %>)" >
-      <h4>Find Happiness with Animals</h4>
-      <p>Phasellus a est in lacus pharetra viverra vitae at nunc. Suspendisse suscipit eleifend dui sed facilisis.<p>
-      <div>
-        <% if current_user %>
-        <%= link_to "Go to all bookings", my_bookings_path, class: "btn-flat"%>
-        <% else %>
-          <%= link_to "Create an Account", new_user_registration_path, class: "btn-flat" %>
-        <% end %>
-      </div>
-    </div>
-    <div class="home-card">
-      <img src="<%= %w(https://images.unsplash.com/photo-1526226060519-126d75eaa5e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80
-        https://images.unsplash.com/photo-1591630866811-eceedf667541?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1673&q=80
-        https://www.rd.com/wp-content/uploads/2020/05/GettyImages-842822220-scaled.jpg?resize=1536,1024
-        https://www.rd.com/wp-content/uploads/2021/04/GettyImages-691507732-scaled.jpg?resize=1536,1024).sample %>)" >
-      <h4>We Love Fluffers As Much As You</h4>
-      <p>Sed vel iaculis sapien. Nullam vel nunc odio. Ut nulla leo, condimentum ac ex fringilla, volutpat scelerisque risus.<p>
-      <div>
-        <% if current_user %>
-            <%= link_to "Post an Animal", new_animal_path, class: "btn-flat" %>
-          <% else %>
-            <%= link_to "See all Animals", animals_path, class:"btn-flat" %>
-        <% end %>
-      </div>
-    </div>
-    <div class="home-card">
-      <img src="<%= %w(https://images.unsplash.com/photo-1442689859438-97407280183f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80
-      https://images.unsplash.com/photo-1535338134198-e28df7d54e3d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2033&q=80
-      https://www.rd.com/wp-content/uploads/2021/04/GettyImages-826981110-scaled.jpg?resize=1536,1018
-      https://www.rd.com/wp-content/uploads/2021/04/GettyImages-182874101-1-scaled.jpg?resize=1536,1024
-      https://www.rd.com/wp-content/uploads/2021/04/GettyImages-669723166-scaled-e1618242211739.jpg?resize=1536,1536).sample %>)" >
-      <h4>Environmentally Friendly</h4>
-      <p>Sed non turpis in elit elementum hendrerit. Pellentesque vestibulum nisl in tortor rutrum, sit amet gravida felis aliquam.<p>
-        <div>
-          <% if current_user %>
-            <%= link_to "Learn More", new_user_registration_path, class: "btn-flat" %>
-          <% else %>
-            <%= link_to "Learn More", new_user_registration_path, class: "btn-flat" %>
-          <% end %>
+<div class="container justify-content-between">
+  <div class="row">
+      <div class="col">
+        <div class="home-card">
+          <img src="<%= %w(https://www.rd.com/wp-content/uploads/2020/05/GettyImages-143405634-scaled.jpg?resize=1536,1022
+            https://www.rd.com/wp-content/uploads/2020/05/GettyImages-988272970-scaled.jpg?resize=1536,1022
+            https://www.rd.com/wp-content/uploads/2020/05/GettyImages-164464932-scaled.jpg?resize=1536,1022
+            https://www.rd.com/wp-content/uploads/2020/05/GettyImages-548004897-scaled.jpg?resize=1536,1222
+            https://www.rd.com/wp-content/uploads/2021/04/GettyImages-158050945.jpg?resize=1536,1024).sample %>)" >
+          <h4>Find Happiness with Animals</h4>
+          <p>Phasellus a est in lacus pharetra viverra vitae at nunc. Suspendisse suscipit eleifend dui sed facilisis.<p>
+          <div>
+            <% if current_user %>
+            <%= link_to "Go to all bookings", my_bookings_path, class: "btn-flat"%>
+            <% else %>
+              <%= link_to "Create an Account", new_user_registration_path, class: "btn-flat" %>
+            <% end %>
+          </div>
         </div>
+      </div>
+      <div class="col">
+        <div class="home-card">
+          <img src="<%= %w(https://images.unsplash.com/photo-1526226060519-126d75eaa5e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2069&q=80
+            https://images.unsplash.com/photo-1591630866811-eceedf667541?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1673&q=80
+            https://www.rd.com/wp-content/uploads/2020/05/GettyImages-842822220-scaled.jpg?resize=1536,1024
+            https://www.rd.com/wp-content/uploads/2021/04/GettyImages-691507732-scaled.jpg?resize=1536,1024).sample %>)" >
+          <h4>We Love Fluffers As Much As You</h4>
+          <p>Sed vel iaculis sapien. Nullam vel nunc odio. Ut nulla leo, condimentum ac ex fringilla, volutpat scelerisque risus.<p>
+          <div>
+            <% if current_user %>
+                <%= link_to "Post an Animal", new_animal_path, class: "btn-flat" %>
+              <% else %>
+                <%= link_to "See all Animals", animals_path, class:"btn-flat" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+        <div class="col">
+        <div class="home-card">
+          <img src="<%= %w(https://images.unsplash.com/photo-1442689859438-97407280183f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80
+          https://images.unsplash.com/photo-1535338134198-e28df7d54e3d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2033&q=80
+          https://www.rd.com/wp-content/uploads/2021/04/GettyImages-826981110-scaled.jpg?resize=1536,1018
+          https://www.rd.com/wp-content/uploads/2021/04/GettyImages-182874101-1-scaled.jpg?resize=1536,1024
+          https://www.rd.com/wp-content/uploads/2021/04/GettyImages-669723166-scaled-e1618242211739.jpg?resize=1536,1536).sample %>)" >
+          <h4>Environmentally Friendly</h4>
+          <p>Sed non turpis in elit elementum hendrerit. Pellentesque vestibulum nisl in tortor rutrum, sit amet gravida felis aliquam.<p>
+            <div>
+              <% if current_user %>
+                <%= link_to "Learn More", new_user_registration_path, class: "btn-flat" %>
+              <% else %>
+                <%= link_to "Learn More", new_user_registration_path, class: "btn-flat" %>
+              <% end %>
+            </div>
+        </div>
+      </div>
+      </div>
     </div>
   </div>
 </div>

@@ -1,9 +1,8 @@
 .home-card {
-  width: 300px;
   border-radius: 3px;
   box-shadow: 0 0 5px #e6e6e6;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   border: 1px solid #e6e6e6;
   position: relative;
   display: flex;
@@ -13,6 +12,7 @@
   background-color: #fff;
   background-clip: border-box;
   border-radius: 2px;
+  object-fit: cover;
   h4 {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -34,6 +34,7 @@
   img {
     height: 200px;
     border-radius: 3px;
+    object-fit: cover;
   }
 }
 
