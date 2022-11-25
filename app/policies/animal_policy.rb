@@ -22,6 +22,11 @@ class AnimalPolicy < ApplicationPolicy
     record.user == user
   end
 
+  def update?
+    record.user == user
+  end
+
+
   def destroy?
     record.user == user
   end

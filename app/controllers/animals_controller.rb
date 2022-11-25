@@ -47,7 +47,7 @@ class AnimalsController < ApplicationController
   def update
     authorize @animal
     if @animal.update(animal_params)
-      redirect_to root_path, notice: "animal was successfully updated"
+      redirect_to animal_path(@animal), notice: "animal was successfully updated"
     else
       render :edit, status: :unprocessable_entity
     end
