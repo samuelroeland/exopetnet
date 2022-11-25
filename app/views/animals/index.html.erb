@@ -3,38 +3,34 @@
     <h1 class="index-title">Here are all the animals available to rent 🐲</h1>
   </div>
 
-  <div class="m-4 p-4">
-  <div style="width: 100%; height: 500px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-  </div>
-  <div class="row" >
-  <% @animals.each do |animal| %>
-    <div class="col-3">
-      <div class="cardszoe">
-
-      <%= cloudinary_image(animal, 'imageee') %>
-
-        <div class="card-body">
-          <h5 class="card-title"> <%= animal.name %></h5>
-          <p class="card-text"> <%= animal.specie %> from <%= animal.origin %></p>
-          <%= link_to "Rent it for €#{animal.price}", animal_path(animal), class:'btn btn-flat'%>
-        </div>
-      </div>
-    </div>
-  <% end %>
-</div>
-
 <div class = "container m-5">
   <p>Do you want to rent your animals so other people can give them some love ? 💚</p>
-
   <%= link_to "Rent your animal", new_animal_path, class:'btn btn-flat'%>
-
-</div>
 </div>
 
-<div>
+<div class="index-container">
+  <div class="cards-index-page">
+    <% @animals.each do |animal| %>
+      <div class="col">
+        <div class="card-index-page">
+          <%= cl_image_tag animal.images[0].key, height: 300, class: "card-img-top", style:"border-top-left-radius: 4%; border-top-right-radius: 4%" %>
+          <div class="card-body ms-3 mt-3">
+            <div>
+            <h5 class="card-title"> <%= animal.name %></h5>
+              <p class="card-text"> <%= animal.specie %> from <%= animal.origin %></p>
+              <%= link_to "Rent it for €#{animal.price}", animal_path(animal), class:'btn-flat'%>
+          </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+    <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1Ijoiem9ldmFucCIsImEiOiJjbGF1eTZzNm8wMGc4M3dvNXV6bWc0bzQwIn0.xejCp7-6FFay-8S02eOIlw'>
+
+</div>
+
+
+  <div>
   <%= link_to "Learn More", new_user_registration_path, class: "btn btn-flat" %>
 </div>
