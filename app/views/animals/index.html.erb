@@ -13,7 +13,8 @@
     <% @animals.each do |animal| %>
       <div class="col">
         <div class="card-index-page">
-          <%= cl_image_tag animal.images[0].key, height: 300, class: "card-img-top", style:"border-top-left-radius: 4%; border-top-right-radius: 4%" %>
+
+          <%= cloudinary_image(animal, "card-img-top animal-photo") %>
           <div class="card-body ms-3 mt-3">
             <div>
             <h5 class="card-title"> <%= animal.name %></h5>
