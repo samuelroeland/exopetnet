@@ -8,8 +8,7 @@
       <div class="row my-5">
       <% i = @animal.images.length - 1 %>
       <% while i >= 0 %>
-        <div class="col-4 my-3"> <%=cl_image_tag @animal.images[i].key, width: 350, height: 350, class: "imageee"%></div>
-
+        <div class="col-12 col-lg-4 col-md-12 my-3"> <%=cl_image_tag @animal.images[i].key, width: 350, height: 350, class: "imageee"%></div>
       <% i -= 1 %>
       <% end %>
       </div>
