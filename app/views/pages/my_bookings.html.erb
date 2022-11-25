@@ -1,10 +1,11 @@
 <div class="container">
   <br>
-  <h1>My Bookings</h1>
+  <h1 class="bookingsh1">My Bookings</h1>
   <br>
   <% @bookings.each do |booking| %>
+    <div class="mybookings_combined">
     <%= link_to animal_path(booking.animal_id), class: "booking-link row individual-booking p-0" do %>
-      <div class="booking-text col-6 m-0" style="padding: 70px">
+      <div class="booking-text col-6 m-0" style="padding-right: 5%; padding-left: 5%">
         <h1><%= booking.animal.name %></h2>
         <hr>
         <p class="bookings-p">Arrival date: <%= booking.arrival_date %></p>
@@ -14,5 +15,6 @@
         <%= cloudinary_image(booking.animal, 'image-container-booking')  %>
       </div>
     <% end %>
+    </div>
   <% end %>
 </div>
