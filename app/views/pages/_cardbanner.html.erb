@@ -23,7 +23,11 @@
       <h4>We Love Fluffers As Much As You</h4>
       <p>Sed vel iaculis sapien. Nullam vel nunc odio. Ut nulla leo, condimentum ac ex fringilla, volutpat scelerisque risus.<p>
       <div>
-        <%= link_to "Post an Animal", new_animal_path, class: "btn-flat" %>
+        <% if current_user %>
+            <%= link_to "Post an Animal", new_animal_path, class: "btn-flat" %>
+          <% else %>
+            <%= link_to "See all Animals", animals_path, class:"btn-flat" %>
+        <% end %>
       </div>
     </div>
     <div class="home-card">
@@ -35,7 +39,11 @@
       <h4>Environmentally Friendly</h4>
       <p>Sed non turpis in elit elementum hendrerit. Pellentesque vestibulum nisl in tortor rutrum, sit amet gravida felis aliquam.<p>
         <div>
-          <%= link_to "Learn More", new_user_registration_path, class: "btn-flat" %>
+          <% if current_user %>
+            <%= link_to "Learn More", new_user_registration_path, class: "btn-flat" %>
+          <% else %>
+            <%= link_to "Learn More", new_user_registration_path, class: "btn-flat" %>
+          <% end %>
         </div>
     </div>
   </div>
