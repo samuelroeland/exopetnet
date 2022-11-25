@@ -8,7 +8,6 @@ class AnimalPolicy < ApplicationPolicy
 
   def show?
     true
-
   end
 
   def new?
@@ -19,16 +18,11 @@ class AnimalPolicy < ApplicationPolicy
     true
   end
 
-  def update?
-    if @current_user
-      record.user == user || user.admin?
-    end
-
+  def edit?
+    record.user == user
   end
 
   def destroy?
-    if @current_user
-      record.user == user || user.admin?
-    end
+    record.user == user
   end
 end
