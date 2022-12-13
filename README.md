@@ -7,40 +7,41 @@ add the mapbox API key as well.
 
 Example:
 Go to project, enter in terminal:
-> touch .env
 
-> echo '.env*' >> .gitignore
+```touch .env ```
+
+```echo '.env*' >> .gitignore ```
 
 <br>
 
 
 # Configuration
 ### First start with packages:
-> bundle install
+```bundle install```
 
-> yarn install
+```yarn install```
 
 <br>
 
 ### Install Active Storage (Cloudinary)
-> rails active_storage:install
+```rails active_storage:install```
 
 <br>
 
 ### Initiate database
-> rails db:drop
+```rails db:drop```
 
-> rails db:create
+```rails db:create```
 
 <br>
 
 ### Run migration
-> rails db:migrate
+```rails db:migrate```
 
 <br>
 
 
 ### Start servers
-> rails s
+```rails s```
 
-> yarn build --watch
+```yarn build --watch```
